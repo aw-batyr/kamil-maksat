@@ -27,7 +27,7 @@ export const About: React.FC = () => {
           {/* About Image */}
           <div className="overflow-hidden rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-700">
             <img
-              src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=1600&auto=format&fit=crop"
+              src="/main.png"
               alt="Teamwork in a bright modern office"
               className="w-full h-80 object-cover"
             />

@@ -91,11 +91,11 @@ export const Services: React.FC = () => {
               </div>
 
               {/* Image */}
-              <div className="mb-4 overflow-hidden rounded-2xl">
+              <div className="mb-4 h-[270px] overflow-hidden rounded-2xl">
                 <img
-                  // src={service.image}
+                  src={"/main.png"}
                   alt={service.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-700"
+                  className="size-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
 

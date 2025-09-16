@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useThemeStore } from "../../store/theme";
 import { LangMenu } from "../shared";
 import { useTranslation } from "react-i18next";
+import { motion } from "motion/react";
 
 export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -83,6 +84,12 @@ export const Header: React.FC = () => {
               </button>
             ))}
           </nav>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden dark:text-gray-100 text-gray-800 text-2xl p-2"
+          >
+            ☰
+          </button>
 
           {/* Theme Toggle & Mobile Menu */}
           <div className="lg:flex hidden items-center gap-3">
@@ -100,36 +107,47 @@ export const Header: React.FC = () => {
                 {isDark ? "Light" : "Dark"}
               </span>
             </button>
-
-            <button
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="md:hidden text-2xl p-2"
-            >
-              ☰
-            </button>
           </div>
         </div>
 
         {/* Mobile Drawer */}
-        {isMenuOpen && (
-          <div
-            className="md:hidden absolute top-full right-4 w-80 bg-white dark:bg-gray-900 
+        <motion.div
+          initial={{ opacity: 0, y: -20, pointerEvents: "none" }}
+          animate={
+            isMenuOpen ? { opacity: 1, y: 0, pointerEvents: "auto" } : {}
+          }
+          className="md:hidden absolute top-full right-4 w-80 bg-white dark:bg-gray-900 
                         border border-gray-200 dark:border-gray-700 rounded-2xl p-4 shadow-xl
                         animate-in slide-in-from-top-2 duration-200"
-          >
-            {["about", "services", "contacts"].map((section) => (
-              <button
-                key={section}
-                onClick={() => scrollToSection(section)}
-                className="block w-full text-left px-3 py-3 text-gray-600 dark:text-gray-300 
+        >
+          {["about", "services", "contacts"].map((section) => (
+            <button
+              key={section}
+              onClick={() => scrollToSection(section)}
+              className="block w-full text-left px-3 py-3 text-gray-600 dark:text-gray-300 
                          hover:text-blue-500 hover:bg-gray-100 dark:hover:bg-gray-800
                          rounded-lg transition-all duration-200 capitalize"
-              >
-                {section}
-              </button>
-            ))}
+            >
+              {section}
+            </button>
+          ))}
+          <div className="flex items-center mt-6 gap-3">
+            <LangMenu />
+            <button
+              onClick={toggleTheme}
+              className="px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700
+                       rounded-lg hover:bg-blue-500 hover:text-white transition-all duration-300
+                       flex items-center gap-2"
+            >
+              <span className="transform transition-transform duration-500 hover:rotate-25 hover:scale-110">
+                {isDark ? "☀️" : "🌙"}
+              </span>
+              <span className="hidden sm:inline text-gray-800 dark:text-gray-100 font-sans">
+                {isDark ? "Light" : "Dark"}
+              </span>
+            </button>
           </div>
-        )}
+        </motion.div>
       </header>
     </>
   );
