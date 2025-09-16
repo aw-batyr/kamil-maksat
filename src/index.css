@@ -1,0 +1,60 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+body {
+  font-family: playfair display, serif;
+}
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fbff;
+  --bg-gradient-start: #eaf4fb;
+  --bg-gradient-end: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+  --color-accent-blue: #4a86ff;
+  --accent-light-blue: #6baed6;
+  --border-color: #e5f0fa;
+  --shadow: 0 4px 20px rgba(74, 134, 255, 0.08);
+  --shadow-hover: 0 8px 30px rgba(74, 134, 255, 0.15);
+  --glass: rgba(255, 255, 255, 0.6);
+  --radius: 20px;
+  --easing: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* contact-block specific fallbacks */
+  --contact-max-width: 1100px;
+  --contact-gap: 48px;
+  --muted: var(--text-secondary);
+  --input-border: #e6e9ef;
+  --card-shadow: 0 14px 30px rgba(22, 29, 37, 0.06);
+}
+
+.dark {
+  --bg-primary: #121212;
+  --bg-secondary: #1e1e1e;
+  --bg-gradient-start: #1c1c1c;
+  --bg-gradient-end: #2a2a2a;
+  --text-primary: #f0f0f0;
+  --text-secondary: #bbbbbb;
+  --accent-blue: #4a86ff;
+  --accent-light-blue: #6baed6;
+  --border-color: #333;
+  --shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+  --shadow-hover: 0 8px 30px rgba(0, 0, 0, 0.8);
+  --glass: rgba(18, 18, 18, 0.45);
+}
+
+.btn {
+  @apply py-4 px-7 rounded-sm;
+}
+
+.btn--border {
+}
+
+.hero span:first-child {
+  @apply text-6xl;
+}
+.hero span:last-child {
+  @apply text-2xl;
+}

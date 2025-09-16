@@ -1,0 +1,83 @@
+{
+  "header": {
+    "title": "Investments Consultants",
+    "nav": ["About", "Services", "Contacts"]
+  },
+
+  "hero": {
+    "title": "<span>Kamil Maksat</span> - <span> Your Trusted Partner for Seamless and Flawless Investment Success!</span>",
+    "subtitle": "Discover Exciting Investment Opportunities and Expert Guidance for Your Investment Journey in Turkmenistan.",
+
+    "btn": "Contact us",
+    "btn2": "See Services"
+  },
+
+  "about": {
+    "title": "Your Trusted Partner for Investment Success in Turkmenistan",
+    "subtitle": "At Kamil Maksat, we understand that entering and growing in the Turkmenistan market requires a reliable and knowledgeable partner by your side. We offer transparent, efficient, and comprehensive solutions tailored to the needs of foreign investors and international businesses."
+  },
+
+  "services": {
+    "title": "Our Services",
+
+    "content": [
+      {
+        "title": "Registration & Licensing",
+        "text": "At Kamil Maksat, we understand that launching and growing a business requires a reliable partner. That's why we offer transparent solutions: from company registration and licensing to comprehensive legal support. With us, you can focus on growth while we handle all legal matters."
+      },
+      {
+        "title": "End-to-end Legal Accompaniment",
+        "text": "We provide end-to-end legal support, ensuring strict compliance with all local laws and regulations in Turkmenistan. Our expertise guarantees full protection of your interests and adherence to legal standards at every stage of your business operations."
+      },
+      {
+        "title": "Permits and Certification Acquisition Assistance",
+        "text": "We help investors obtain all necessary permits and certifications for legal business operation in Turkmenistan. Our services ensure compliance with industry-specific regulations and standards, securing official authorization so your business can operate smoothly and confidently."
+      },
+      {
+        "title": "Taxation and Accounting Compliance Support",
+        "text": "We provide support to ensure your business complies with Turkmenistan’s tax and accounting regulations. Our services include tax planning, report filing, and setting up accounting systems that align with local laws. We help optimize your tax duties while maintaining full compliance."
+      },
+      {
+        "title": "Dispute Resolution for Investors",
+        "text": "We provide expert dispute resolution services for investors, including mediation, arbitration, and litigation support. Our team protects your rights and interests, helping resolve conflicts efficiently to safeguard your investments and business reputation."
+      },
+      {
+        "title": "Import-Export Advisory for Investors",
+        "text": "We offer expert advice to investors on import-export regulations, customs procedures, and trade compliance. Our services help optimize your supply chains, ensure smooth cross-border operations, and maximize growth opportunities in international markets."
+      }
+    ]
+  },
+
+  "contacts": {
+    "title": "Contacts",
+    "subtitle": "Contact us for more information, consultations, and support. We are always ready to answer your questions and assist with any issues related to investments and business in Turkmenistan.",
+
+    "info": [
+      {
+        "title": "Our Location",
+        "subtitle": "Ashgabat, Turkmenistan"
+      },
+      {
+        "title": "Phone Number",
+        "subtitle": "+ 993 71 20 14 20"
+      },
+      {
+        "title": "Email Address",
+        "subtitle": "kamilmaksat.h.j@gmail.com"
+      }
+    ],
+
+    "fields": [
+      { "name": "Name" },
+      { "name": "Company" },
+      {
+        "name": "Telephone"
+      },
+      {
+        "name": "Your request"
+      }
+    ],
+
+    "btn": "Send"
+  }
+}

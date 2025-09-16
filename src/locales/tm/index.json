@@ -1,0 +1,83 @@
+{
+  "header": {
+    "title": "Maýa goýumlar maslahatçylary",
+    "nav": ["Biz barada", "Hyzmatlarymyz", "Aragatnaşyk"]
+  },
+
+  "hero": {
+    "title": "<span>Kämil Maksat</span> - <span>Birkemsiz we täsirli maýa goýum üstünlikleri üçin ygtybarly hyzmatdaşyňyz!</div>",
+    "subtitle": "Türkmenistanda maýa goýum işi boýunça iş hereketleriňiz üçin gyzykly maýa goýum mümkinçiliklerini tapyň we bilermenleriň maslahatyny alyň.",
+
+    "btn": "Habarlaşmak üçin",
+    "btn2": "Hyzmatlar"
+  },
+
+  "about": {
+    "title": "Türkmenistanda maýa goýum üstünlikleri üçin ygtybarly hyzmatdaşyňyz",
+    "subtitle": "Kamil Maksat bolup, biz Türkmenistanyň bazaryna girmek we ösmek siziň tarapyňyzdan ygtybarly we tejribeli hyzmatdaş bolmagyny zerurdygyny düşünýäris. <br />E Daşary ýurt maýadarlarynyň we halkara kärhanalarynyň isleglerine laýyk gelýän aýdyň, täsirli we hemmetaraplaýyn çözgütleri hödürleýäris."
+  },
+
+  "services": {
+    "title": "Biziň hyzmatlarymyz",
+
+    "content": [
+      {
+        "title": "Kärhanalaryň hasaba alnyşy we ygtyýarnamalaşdyrylmagy",
+        "text": "Kamil Maksatda, işe başlamak we ösdürmek üçin ygtybarly hyzmatdaş gerekdigine düşünýäris. Şol sebäpli biz aýdyň çözgütleri hödürleýäris: kompaniýany hasaba almakdan we ygtyýarnama almakdan başlap, giňişleýin hukuk goldawyna çenli.   Biziň bilen hyzmatdaşlykda ünsüňizi ösüşe gönükdirip bilersiňiz."
+      },
+      {
+        "title": "Giňişleýin hukuk goldawy",
+        "text": "Türkmenistanyň ähli ýerli kanunlaryna we kadalaryna berk berjaý edilmegini üpjün edip, giňişleýin hukuk goldawyny berýäris. Biziň tejribämiz, işiňiziň her bir döwründe gyzyklanmalaryňyzyň doly goralmagyny we kanuny ülňüleriň berjaý edilmegini kepillendirýär."
+      },
+      {
+        "title": "Rugsatnama we şahadatnama almak",
+        "text": "Maýa goýujylary Türkmenistanda öz işini kanuny esasda alyp barmak üçin ähli zerur rugsatnamalary we şahadatnamalary almaga kömek edýäris. Biziň üpjün hyzmatlarymyz bolsa - siziň iş hereketleriňiziň rahat we ynamly alnyp barylmagy üçin resmi kada-kanunçylyk ýörelgeleri üpjün edilip, pudak düzgünleriniň we ülňüleriniň berjaý edilmegini üpjün edýär."
+      },
+      {
+        "title": "Audit we buhgalteriýa goldawy",
+        "text": "Siziň iş hereketleriňiziň  Türkmenistanyň salgyt we buhgalteriýa ulgamlaryna degişli bolan kanunlaryna doly laýyk gelmegini üpjün edýäris. Hyzmatlarymyz salgyt meýilnamalaşdyrylyşyny, salgyt hasabatlaryny taýýarlamagy we tabşyrmagy, şeýle hem kanuny talaplara laýyk gelýän netijeli hasapçylyk ulgamyny guramagy öz içine alýar."
+      },
+      {
+        "title": "Maýa goýum jedellerini çözmek",
+        "text": "Maýa goýujylar üçin arbitraž we maýa goýum jedellerini goldamak ýaly hünärmenleriň jedellerini çözmek hyzmatlaryny hödürleýäris. Toparymyz, maýa goýumlaryňyzy we işewür abraýyňyzy goramak üçin gapma-garşylyklary netijeli çözmäge kömek edip, hukuklaryňyzy we gyzyklanmalaryňyzy goraýar."
+      },
+      {
+        "title": "Import-eksport geňeşmeleri",
+        "text": "Maýa goýumçylaryna import we eksport düzgünleri, gümrük amallary we söwdanyň berjaý edilmegi boýunça hünärmen maslahatyny hödürleýäris. Hyzmatlarymyz üpjünçilik zynjyrlaryny optimizirlemäge, halkara amallarynyň göwnejaý bolmagyny üpjün etmäge we dünýä bazarlarynda ösüş mümkinçiliklerini has giňeltmäge kömek edýär."
+      }
+    ]
+  },
+
+  "contacts": {
+    "title": "Aragatnaşyk üçin:",
+    "subtitle": "Has giňişleýin maglumat, maslahat we goldaw üçin biziň bilen habarlaşyň. Siziň soraglaryňyza jogap bermäge we Türkmenistanda maýa goýum we işewürlik bilen baglanyşykly islendik meselede size kömek etmäge taýýardyrys.",
+
+    "info": [
+      {
+        "title": "Ýerleşýän ýeri:",
+        "subtitle": "Aşgabat, Türkmenistan"
+      },
+      {
+        "title": "Telefon belgisi:",
+        "subtitle": "+ 993 71 20 14 20"
+      },
+      {
+        "title": "E-mail poçta salgysy",
+        "subtitle": "kamilmaksat.h.j@gmail.com"
+      }
+    ],
+
+    "fields": [
+      { "name": "Siziň adyňyz" },
+      { "name": "Kärhana/kompaniýa" },
+      {
+        "name": "Telefon belgiňiz"
+      },
+      {
+        "name": "Siziň soragyňyz"
+      }
+    ],
+
+    "btn": "Ugratmak"
+  }
+}
