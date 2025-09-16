@@ -131,7 +131,7 @@ export const ContactForm: React.FC = () => {
               }}
             />
             <div
-              className="absolute -top-9 -right-9 w-22 h-22 bg-blue-500 rounded-full pointer-events-none
+              className="absolute hidden lg:block -top-9 -right-9 w-22 h-22 bg-blue-500 rounded-full pointer-events-none
                           shadow-lg shadow-blue-500/20"
               style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 50% 100%)" }}
             />

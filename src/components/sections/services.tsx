@@ -63,7 +63,7 @@ export const Services: React.FC = () => {
     <section id="services" className="py-24 bg-white dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-5">
         <h2 className="text-4xl lg:text-5xl font-serif text-center text-gray-900 dark:text-gray-100 mb-16">
-          Our Services
+          {t("services.title")}
         </h2>
 
         <div className="grid md:grid-cols-1 xl:grid-cols-2 gap-8">

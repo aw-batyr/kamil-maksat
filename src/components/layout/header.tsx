@@ -60,9 +60,9 @@ export const Header: React.FC = () => {
           {/* Logo Section */}
           <div className="flex items-center gap-4">
             <img src="/logo-text.svg" alt="" />
-            <h1 className="text-xl md:text-2xl font-serif text-gray-900 dark:text-gray-100">
+            <h2 className="text-base md:text-2xl font-serif text-gray-900 dark:text-gray-100">
               {t("header.title")}
-            </h1>
+            </h2>
           </div>
 
           {/* Desktop Navigation */}
@@ -85,7 +85,7 @@ export const Header: React.FC = () => {
           </nav>
 
           {/* Theme Toggle & Mobile Menu */}
-          <div className="flex items-center gap-3">
+          <div className="lg:flex hidden items-center gap-3">
             <LangMenu />
             <button
               onClick={toggleTheme}
