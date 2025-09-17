@@ -1,5 +1,9 @@
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import toast from "react-hot-toast";
 import { useTranslation } from "react-i18next";
+import z from "zod";
 
 const icons = [
   <svg
@@ -48,8 +52,26 @@ const icons = [
   </div>,
 ];
 
+const formSchema = z.object({
+  name: z.string().min(3, "Name is required"),
+  company: z.string().min(3, "Company name is required"),
+  telephone: z.string().min(3, "Phone number is required"),
+  message: z.string().min(3, "Message is required"),
+});
+
+type FormFields = z.infer<typeof formSchema>;
+
 export const ContactForm: React.FC = () => {
   const { t } = useTranslation("index");
+
+  const {
+    register,
+    reset,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+  } = useForm<FormFields>({
+    resolver: zodResolver(formSchema),
+  });
 
   const title = t("contacts.title");
   const subtitle = t("contacts.subtitle");
@@ -61,26 +83,22 @@ export const ContactForm: React.FC = () => {
     name: string;
   }[];
 
-  const [formData, setFormData] = useState({
-    name: "",
-    father: "",
-    phone: "",
-    message: "",
-  });
+  const onSubmit = async (data: FormFields) => {
+    try {
+      const res = await axios.post(
+        "https://kamilmaksat.com/api/send_email",
+        data,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    // Handle form submission here
-  };
-
-  const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    setFormData((prev) => ({
-      ...prev,
-      [e.target.name]: e.target.value,
-    }));
+      if (res.data.status === "success") toast.success(res.data.message);
+      else toast.error("Something went wrong!");
+      reset();
+    } catch (error) {
+      console.error("POST", error);
+    }
   };
 
   return (
@@ -137,51 +155,79 @@ export const ContactForm: React.FC = () => {
             />
 
             <div className="bg-white dark:bg-gray-800 p-7 rounded-xl shadow-xl border border-gray-100 dark:border-gray-700 relative z-10">
-              <form onSubmit={handleSubmit} className="space-y-4">
-                <input
-                  type="text"
-                  name="name"
-                  placeholder={fields[0].name}
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-4 rounded-lg border-2 border-gray-200 dark:border-gray-600
-                           focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none
+              <form
+                onSubmit={handleSubmit(onSubmit)}
+                className="space-y-7 font-sans"
+              >
+                <div className="relative">
+                  <input
+                    {...register("name")}
+                    type="text"
+                    name="name"
+                    placeholder={fields[0].name}
+                    className="w-full px-4 py-4 rounded-lg border-2 border-gray-200 dark:border-gray-600
+                  focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none
                            bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all"
-                />
-                <input
-                  type="text"
-                  name="father"
-                  placeholder={fields[1].name}
-                  value={formData.father}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-4 rounded-lg border-2 border-gray-200 dark:border-gray-600
-                           focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none
-                           bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all"
-                />
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder={fields[2].name}
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-4 rounded-lg border-2 border-gray-200 dark:border-gray-600
-                           focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none
-                           bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all"
-                />
-                <textarea
-                  name="message"
-                  placeholder={fields[3].name}
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-4 rounded-lg border-2 border-gray-200 dark:border-gray-600
-                                         focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none
-                                         bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all"
-                />
+                  />
+                  {errors.name && (
+                    <span className="error-text left-0 -bottom-5">
+                      {errors.name.message}
+                    </span>
+                  )}
+                </div>
+                <div className="relative bottom">
+                  <input
+                    {...register("company")}
+                    type="text"
+                    name="company"
+                    placeholder={fields[1].name}
+                    className="w-full px-4 py-4 rounded-lg border-2 border-gray-200 dark:border-gray-600
+                  focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none
+                  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all"
+                  />
+                  {errors.company && (
+                    <span className="error-text -bottom-5">
+                      {errors.company.message}
+                    </span>
+                  )}
+                </div>
+                <div className="relative bottom">
+                  <input
+                    {...register("telephone")}
+                    type="text"
+                    name="telephone"
+                    placeholder={fields[2].name}
+                    className="w-full px-4 py-4 rounded-lg border-2 border-gray-200 dark:border-gray-600
+                  focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none
+                  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all"
+                  />
+                  {errors.telephone && (
+                    <span className="error-text -bottom-5">
+                      {errors.telephone.message}
+                    </span>
+                  )}
+                </div>
+                <div className="relative">
+                  <textarea
+                    {...register("message")}
+                    name="message"
+                    placeholder={fields[3].name}
+                    rows={4}
+                    className="w-full px-4 py-4 rounded-lg border-2 border-gray-200 dark:border-gray-600
+                  focus:border-blue-500 focus:ring-4 focus:ring-blue-500/20 outline-none
+                  bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 transition-all"
+                  />
+                  {errors.message && (
+                    <span className="error-text -bottom-4">
+                      {errors.message.message}
+                    </span>
+                  )}
+                </div>
+
                 <button
-                  type="submit"
-                  className="w-full py-4 bg-blue-500 text-white rounded-lg font-bold text-lg
-                                           hover:bg-blue-600 transition-all duration-300 mt-2"
+                  disabled={isSubmitting}
+                  className="w-full disabled:opacity-50 disabled:cursor-default cursor-pointer focus:scale-95 font-sans cup py-4 bg-blue-500 text-white rounded-lg font-bold text-lg
+                                          hover:bg-blue-600 transition-all duration-300 mt-2"
                 >
                   {t("contacts.btn")}
                 </button>
