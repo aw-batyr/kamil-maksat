@@ -47,7 +47,7 @@ export const Hero: React.FC = () => {
           <div className="animate-in slide-in-from-right duration-1000 delay-300">
             <div className="overflow-hidden rounded-3xl shadow-2xl hover:scale-105 transition-transform duration-700">
               <img
-                src="/main.png"
+                src="/hero.png"
                 alt="Modern glass office building"
                 className="w-full h-96 object-cover"
               />
