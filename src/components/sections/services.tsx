@@ -93,7 +93,7 @@ export const Services: React.FC = () => {
               {/* Image */}
               <div className="mb-4 h-[270px] overflow-hidden rounded-2xl">
                 <img
-                  src={"/main.png"}
+                  src={`/services/${index + 1}.png`}
                   alt={service.title}
                   className="size-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
