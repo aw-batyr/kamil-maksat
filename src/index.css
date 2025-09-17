@@ -58,3 +58,7 @@ body {
 .hero span:last-child {
   @apply text-2xl;
 }
+
+.error-text {
+  @apply text-red-500 font-sans absolute text-xs transition-all left-0;
+}
